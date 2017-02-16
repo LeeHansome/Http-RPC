@@ -33,4 +33,8 @@ public class Requeset implements Serializable{
     public void setParam(Object param) {
         this.param = param;
     }
+
+    public Object invoke(Object bean) throws Exception{
+        return clazz.getMethod(method,param.getClass()).invoke(bean,param);
+    }
 }
